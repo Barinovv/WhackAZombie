@@ -39,14 +39,14 @@ public class GameManager {
         zombies = new Array<Zombie>();
         zombieTexture = new Texture(Gdx.files.internal("zombie.png"));
 
-        backgroundTexture = new Texture(Gdx.files.internal("ground.jpg")); // загрузка текстуры
+        backgroundTexture = new Texture(Gdx.files.internal("background.png")); // загрузка текстуры
         backgroundSprite = new Sprite(backgroundTexture); // установка текстуры в спрайт
 
         // настройка размеров и позиции спрайта заднего фона
         backgroundSprite.setSize(width, height);
         backgroundSprite.setPosition(0, 0f);
 
-        holeTexture = new Texture(Gdx.files.internal("hole.png"));
+        holeTexture = new Texture(Gdx.files.internal("blackhole.png"));
         holeSprites = new Array<Sprite>();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -73,7 +73,7 @@ public class GameManager {
             zombie.zombieSprite = new Sprite(zombieTexture);
 
             // установка размеров зомби
-            float scaleFactor = width / 600f;
+            float scaleFactor = width / 1700f;
             zombie.scaleFactor = scaleFactor;
             zombie.width = zombie.zombieSprite.getWidth() * (scaleFactor);
             zombie.height = zombie.zombieSprite.getHeight() * (scaleFactor);
