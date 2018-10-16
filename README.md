@@ -6,3 +6,5 @@
 ## Реализовано
 ### На данный момент реализовано расположение ям и зомби на игровом экране
 ### UPD.1. Реализована анимация для зомби
+## С экрана устройства:
+<img src="https://github.com/Barinovv/WhackAZombie/blob/master/core/gifupdown.gif"></img>
