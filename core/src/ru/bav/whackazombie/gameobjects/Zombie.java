@@ -17,10 +17,38 @@ public class Zombie {
     public float height,width; // размеры зомби
     public float scaleFactor; // коэффициент масштабирования зомби в зависимости от экрана устройства
 
+    public enum State {GOINGUP,GOINGDOWN}; // определение состояний зомби
+    public State state = State.GOINGUP; // переменная, описывающая текущее состояние зомби
+    public float currentHeight = 0.0f; // текущая величина высоты зомби относительно ямы
+    public float speed =2f; // скорость, с которой зомби будет двигаться вверх/вниз
+
     public void render(SpriteBatch batch){
 
         zombieSprite.draw(batch);
     }
 
+    public void update(){
+        switch(state){
+            // увеличиваем высоту до максимума, как только высота достигнет максимума - меняем состояние
+            case GOINGUP:
+                currentHeight+=speed;
+                if(currentHeight>=height){
+                    currentHeight=height;
+                    state=State.GOINGDOWN;
+                }
+                break;
+            // уменьшаем высоту до минимума(0), как только выоста достигнет минимума - меняем состояние
+            case GOINGDOWN:
+                currentHeight-=speed;
+                if(currentHeight<=0.0){
+                    currentHeight=0.0f;
+                    state=State.GOINGUP;
+                }
+                break;
+        }
+        // рисуем только часть изображения зомби. Зависит от высоты над ямой
+        zombieSprite.setRegion(0, 0, (int)(width/scaleFactor), (int)(currentHeight/scaleFactor));
+        zombieSprite.setSize(zombieSprite.getWidth(), currentHeight);
+    }
 
 }

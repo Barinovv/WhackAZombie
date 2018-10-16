@@ -92,13 +92,19 @@ public class GameManager {
 
         backgroundSprite.draw(batch);
 
+
+
         // Отображение каждой ямы
         for (Sprite sprite : holeSprites)
             sprite.draw(batch);
 
+
         // Отображение каждого зомби
         for (Zombie zombie : zombies)
             zombie.render(batch);
+
+        for (Zombie zombie : zombies)
+            zombie.update();
     }
 
     public static void dispose() {
