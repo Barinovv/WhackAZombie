@@ -82,7 +82,7 @@ public class GameManager {
             // установка позиции зомби
 
             zombie.position.y = (sprite.getY() + sprite.getHeight() / 5f);
-            zombie.position.x = ((sprite.getX() + (sprite.getX() + sprite.getWidth())) / 2 - (zombie.zombieSprite.getWidth() / 2));
+            zombie.position.x = ((sprite.getX() + (sprite.getX() + sprite.getWidth())) / 2 );
             zombie.zombieSprite.setPosition(zombie.position.x, zombie.position.y);
         }
 
