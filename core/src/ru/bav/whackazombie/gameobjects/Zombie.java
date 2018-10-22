@@ -57,7 +57,7 @@ public class Zombie {
                 currentHeight -= speed;
                 if (currentHeight <= 0.0) {
                     currentHeight = 0.0f;
-                    state = State.GOINGUP;
+                    state = State.UNDERGROUND;
                 }
                 break;
         }
