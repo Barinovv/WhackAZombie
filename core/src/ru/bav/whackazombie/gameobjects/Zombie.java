@@ -18,9 +18,7 @@ public class Zombie {
     public float height, width; // размеры зомби
     public float scaleFactor; // коэффициент масштабирования зомби в зависимости от экрана устройства
 
-    public enum State {GOINGUP, GOINGDOWN, UNDERGROUND};
-
-     // определение состояний зомби
+    public enum State {GOINGUP, GOINGDOWN, UNDERGROUND} // определение состояний зомби
     public State state = State.GOINGUP; // переменная, описывающая текущее состояние зомби
     public float currentHeight = 0.0f; // текущая величина высоты зомби относительно ямы
     public float speed = 2f; // скорость, с которой зомби будет двигаться вверх/вниз
